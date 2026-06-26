@@ -1,0 +1,100 @@
+<%- include('header') %>
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> My Profile </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Profile</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="<%= user.avtar ? user.avtar : '/assets/images/faces/face2.jpg' %>" alt="profile"
+                                class="rounded-circle mb-3" width="150" height="150" />
+                            <h3>
+                                <%= user.name %>
+                            </h3>
+
+                            <p>
+                                <%= user.email %>
+                            </p>
+
+                            <span class="badge badge-primary">
+                                <%= user.role %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Edit Profile</h4>
+
+                            <form method="post" action="/updateProfile" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="text" name="fname" class="form-control" placeholder="First Name"
+                                        value="<%= user.name.split(' ')[0] %>" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="lname" class="form-control" placeholder="Last Name"
+                                        value="<%= user.name.split(' ')[1] %>" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" value="<%= user.email %>" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="file" name="avtar" class="form-control" />
+                                </div>
+
+                                <button type="submit" class="btn btn-gradient-primary">
+                                    Update Profile
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Change Password</h4>
+
+                            <form method="post" action="/changePassword">
+                                <div class="form-group">
+                                    <input type="password" name="oldPassword" class="form-control"
+                                        placeholder="Old Password" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" name="newPassword" class="form-control"
+                                        placeholder="New Password" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" name="confirmPassword" class="form-control"
+                                        placeholder="Confirm Password" />
+                                </div>
+
+                                <button type="submit" class="btn btn-gradient-danger">
+                                    Change Password
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('footer') %>

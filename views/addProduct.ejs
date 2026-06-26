@@ -1,0 +1,47 @@
+<%- include('header') %>
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Product</h4>
+                <form method="post" action="/insertProduct" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select name="categoryId" class="form-control" required>
+                            <option value="">-- Select Category --</option>
+                            <% categories.forEach(category => { %>
+                                <option value="<%= category._id %>"><%= category.categoryName %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select SubCategory</label>
+                        <select name="subCategoryId" class="form-control" required>
+                            <option value="">-- Select SubCategory --</option>
+                            <% subcategories.forEach(sub => { %>
+                                <option value="<%= sub._id %>"><%= sub.subCategoryName %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" name="productName" class="form-control" placeholder="Enter Product Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Price</label>
+                        <input type="number" name="productPrice" class="form-control" placeholder="Enter Product Price" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Description</label>
+                        <textarea name="productDesc" class="form-control" rows="4" placeholder="Enter Description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Image</label>
+                        <input type="file" name="productImage" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-gradient-primary">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('footer') %>

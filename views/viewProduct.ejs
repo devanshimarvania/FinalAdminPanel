@@ -1,0 +1,40 @@
+<%- include('header') %>
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="card-title">View Products</h4>
+            <a href="/trash" class="btn btn-danger btn-sm"><i class="mdi mdi-delete"></i> Go To Trash</a>
+        </div>
+        <div class="card">
+            <div class="card-body table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>SubCategory</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach((v, i) => { %>
+                        <tr>
+                            <td><%= ++i %></td>
+                            <td><img src="<%= v.productImage %>" width="50" height="50" alt="product"></td>
+                            <td><%= v.productName %></td>
+                            <td><%= v.categoryId ? v.categoryId.categoryName : 'N/A' %></td>
+                            <td><%= v.subCategoryId ? v.subCategoryId.subCategoryName : 'N/A' %></td>
+                            <td>
+                                <a href="/editProduct/<%= v._id %>" class="btn btn-info btn-sm">Edit</a>
+                                <a href="/deleteProduct/<%= v._id %>" class="btn btn-warning btn-sm">Move to Trash</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<%- include('footer') %>
