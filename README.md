@@ -1,120 +1,150 @@
-# 🛡️ Admin Panel — Passport.js Authentication
+# 🧑‍💼 FinalAdminPanel
 
-A secure and responsive Admin Panel built with **Node.js**, **Express**, and **MongoDB**,
-featuring **Passport.js** session-based authentication and full admin user management.
+A modern and scalable **Admin Dashboard Panel** built for managing core application data with ease. This project is designed to simplify administrative tasks like managing users, categories, products/services, and other backend operations through a clean and intuitive interface.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 Session-based Login / Logout with **Passport.js**
-- 🔑 Password hashing with **Bcrypt**
-- 📋 Full **CRUD** — Add, View, Edit, Delete Admins
-- 🖼️ Avatar/Image upload with **Multer**
-- 🛡️ Protected routes via Passport Auth Middleware
-- 🎨 Responsive UI with **Purple Admin** template
-- ⚡ Server-side rendering with **EJS**
+- 📊 Interactive Admin Dashboard UI
+- 👤 User Management (Create, Read, Update, Delete)
+- 📦 Product / Category Management System
+- 🔐 Authentication & Protected Routes (if implemented)
+- 📱 Fully Responsive Design (Mobile + Desktop)
+- ⚙️ Modular and Reusable Code Structure
+- 🧩 Easy Integration with Backend APIs
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology                        |
-|--------------|-----------------------------------|
-| Runtime      | Node.js                           |
-| Framework    | Express.js                        |
-| Database     | MongoDB + Mongoose                |
-| Auth         | Passport.js + Express-Session     |
-| Password     | Bcrypt                            |
-| File Upload  | Multer                            |
-| View Engine  | EJS                               |
-| Styling      | CSS / SCSS                        |
+- **Frontend:** HTML, CSS, JavaScript / React (as per project setup)
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (or SQL if used)
+- **Styling:** Bootstrap / Tailwind CSS
+- **Tools:** Git, GitHub, Postman
 
 ---
 
 ## 📁 Project Structure
 
-AdminPanelPassportJs/
+FinalAdminPanel/
 │
-├── config/           # MongoDB connection + Passport config
-├── controllers/      # Business logic (auth + admin CRUD)
-├── middleware/       # Passport authentication middleware
-├── models/           # Mongoose Admin schema + Multer config
-├── public/           # Static files (CSS, JS, images, avatars)
-├── routes/           # Express route definitions
-├── views/            # EJS templates (login, register, dashboard)
-└── app.js            # Application entry point
+├── models/          # Database schemas
+├── controllers/     # Business logic
+├── routes/          # API routes
+├── views/           # Frontend templates (if any)
+├── public/          # Static assets (CSS, JS, images)
+├── config/          # Configuration files
+├── app.js / server.js
+└── README.md
+
 
 ---
 
-## ⚙️ Getting Started
+## ⚙️ Installation & Setup
 
-### Prerequisites
-- Node.js installed
-- MongoDB running locally
+Follow these steps to run the project locally:
 
-### Installation
+# Clone the repository
+git clone https://github.com/devanshimarvania/FinalAdminPanel.git
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/devanshimarvania/AdminPanelPassportJs.git
+# Navigate into the project directory
+cd FinalAdminPanel
 
-# 2. Navigate into the project
-cd AdminPanelPassportJs
-
-# 3. Install dependencies
+# Install dependencies
 npm install
 
-# 4. Start the server
-node app.js
-```
+# Start the development server
+npm start
 
-### 🌐 Visit the app
-
-http://localhost:9000
 
 ---
 
-## 📸 Pages
+## 🔑 Environment Variables
 
-| Page         | Route              |
-|--------------|--------------------|
-| Login        | `/login`           |
-| Register     | `/register`        |
-| Dashboard    | `/`                |
-| Add Admin    | `/addAdmin`        |
-| View Admins  | `/viewAdmin`       |
-| Edit Admin   | `/editAdmin/:id`   |
-| Delete Admin | `/deleteAdmin/:id` |
+Create a `.env` file in the root directory and add:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
 
 ---
 
-## 🔐 Auth Comparison
+## 📸 Screenshots
 
-| Feature             | Cookie Auth        | Passport.js Auth        |
-|---------------------|--------------------|--------------------------|
-| Strategy            | Manual cookie check| passport-local strategy  |
-| Session handling    | cookie-parser      | express-session          |
-| Scalability         | Basic              | Flexible & extensible    |
-| Multiple strategies | ❌                 | ✅ (Google, JWT, etc.)   |
+> Add your project screenshots here for better presentation
+
+
+Dashboard View  
+User Management Page  
+Product/Category Panel  
+
+---
+
+## 🎯 Purpose of Project
+
+This project is built for learning and demonstrating:
+
+* Full-stack CRUD operations
+* Admin panel architecture
+* Backend API development
+* Database integration
+* Real-world dashboard UI design
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a new branch (feature/new-feature)
+3. Commit your changes
+4. Push to branch
+5. Create a Pull Request
+
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
 ## 👩‍💻 Author
 
-**Devanshi Marvania**  
-[GitHub](https://github.com/devanshimarvania)
+**Devanshi Marvania**
+GitHub: [@devanshimarvania](https://github.com/devanshimarvania)
 
 ---
 
-⭐ Star this repo if you found it helpful!
+⭐ If you like this project, don't forget to star the repository!
 
 
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 151902" src="https://github.com/user-attachments/assets/feadc8ef-0317-4dcf-88f8-359577c3b78e" />
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 151919" src="https://github.com/user-attachments/assets/cdf4d42a-d0a1-458e-b8b7-96660070ebaf" />
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 153546" src="https://github.com/user-attachments/assets/cc0daca1-63d9-470f-a7e4-0f206a1c15d5" />
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 153605" src="https://github.com/user-attachments/assets/9c84b6bf-4960-4166-bdcc-14a2663ea717" />
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 153625" src="https://github.com/user-attachments/assets/d47ddfce-e329-41e0-8b0c-86a605cdfca2" />
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 153709" src="https://github.com/user-attachments/assets/115eb14f-298c-40fe-b81a-c4bab51f6c68" />
-<img width="1920" height="1080" alt="Screenshot 2026-05-11 153742" src="https://github.com/user-attachments/assets/7a3e6b9f-ff0e-40d8-bab2-adf8fdf51678" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5834186e-ae8a-4b2a-9b3e-bab7fa3272a4" />
+
+---
+
+If you want, I can also:
+- ✨ :contentReference[oaicite:0]{index=0}
+- 🎨 :contentReference[oaicite:1]{index=1}
+- 🧠 :contentReference[oaicite:2]{index=2}
+- 🚀 Or :contentReference[oaicite:3]{index=3}
+
+Just tell me 👍
+
+
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172241" src="https://github.com/user-attachments/assets/09f52470-ddee-4db3-b82a-9a2887c627f9" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172252" src="https://github.com/user-attachments/assets/ca96e79d-436e-4ee8-bc28-3d30d0e53d2c" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172302" src="https://github.com/user-attachments/assets/cb16f046-8585-4338-a568-7026e3e39fe3" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172312" src="https://github.com/user-attachments/assets/b9359189-0a3c-4b50-908d-00dbc4904f16" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172417" src="https://github.com/user-attachments/assets/4aef9af5-7571-4d15-b64b-e860192ecfbc" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172431" src="https://github.com/user-attachments/assets/5534c026-cbee-4bd8-b94f-6e2f1e03287b" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172450" src="https://github.com/user-attachments/assets/cc8c6726-29e4-448b-b996-4b691eb1b852" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172507" src="https://github.com/user-attachments/assets/ec40c1df-ad8b-436d-b917-f817e2489624" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172521" src="https://github.com/user-attachments/assets/d351803c-bea0-442a-9d94-50f2ceba19ae" />
+<img width="1920" height="1080" alt="Screenshot 2026-06-26 172619" src="https://github.com/user-attachments/assets/ba000f74-8d3e-4e8e-aa5c-1e6961439a9a" />
+<img width="1191" height="453" alt="Screenshot 2026-06-26 172634" src="https://github.com/user-attachments/assets/27e45eb7-9bf2-4ef0-83f5-121e60cb83f8" />
+<img width="939" height="594" alt="Screenshot 2026-06-26 172647" src="https://github.com/user-attachments/assets/2e0c6f76-ae13-4ec3-8d01-5d509ce11f4c" />
